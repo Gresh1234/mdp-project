@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="lib/audience-annotations-0.5.0.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-annotations-2.9.0.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-core-2.9.6.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.9.6.jar"/>
+	<classpathentry kind="lib" path="lib/jopt-simple-5.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/kafka_2.12-2.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/kafka-clients-2.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/lz4-java-1.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/metrics-core-2.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/scala-library-2.12.6.jar"/>
+	<classpathentry kind="lib" path="lib/scala-logging_2.12-3.9.0.jar"/>
+	<classpathentry kind="lib" path="lib/scala-reflect-2.12.6.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="lib" path="lib/snappy-java-1.1.7.1.jar"/>
+	<classpathentry kind="lib" path="lib/zkclient-0.10.jar"/>
+	<classpathentry kind="lib" path="lib/zookeeper-3.4.13.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-simple-1.7.25.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
