@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="mdp-kafka" basedir="." default="dist">
-   <property name="name" value="mdp-kafka" />
+<project name="mdp-project" basedir="." default="dist">
+   <property name="name" value="mdp-project" />
    <property name="src" value="src" />
    <property name="version" value="" />
    <property name="dist" value="dist" />
