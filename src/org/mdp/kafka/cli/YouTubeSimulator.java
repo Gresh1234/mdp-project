@@ -13,7 +13,7 @@ import org.mdp.kafka.def.KafkaConstants;
 import org.mdp.kafka.sim.YouTubeStream;
 
 public class YouTubeSimulator {
-	public static int video_ID = 2;
+	public static int video_ID = 0;
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException{
 		if(args.length!=3){

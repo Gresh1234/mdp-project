@@ -41,7 +41,7 @@ public class YouTubeStream implements Runnable {
 		long wait = 0;
 		try{
 			while((line = br.readLine())!=null){
-				String[] tabs = line.split(",");
+				String[] tabs = line.split("\t");
 				if(tabs.length>id){
 					try{
 						long timeData = getUnixTime(tabs[4]);
