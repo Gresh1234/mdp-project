@@ -44,7 +44,7 @@ public class YouTubeStream implements Runnable {
 				String[] tabs = line.split(",");
 				if(tabs.length>id){
 					try{
-						long timeData = getUnixTime(tabs[2]);
+						long timeData = getUnixTime(tabs[4]);
 						if(startData == 0) // first element read
 							startData = timeData;
 						
@@ -57,7 +57,7 @@ public class YouTubeStream implements Runnable {
 						}
 						producer.send(new ProducerRecord<String,String>(topic, 0, timeData, idStr, line));
 					} catch(ParseException | NumberFormatException pe){
-						System.err.println("Cannot parse date "+tabs[0]);
+						System.err.println("Cannot parse date "+tabs[4]);
 					}
 				}
 				
