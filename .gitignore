@@ -1,2 +1,4 @@
 /bin/
 .vscode
+data/*
+preprocessing_output/*
