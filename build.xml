@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="mdp-project" basedir="." default="dist">
-   <property name="name" value="mdp-project" />
+<project name="mdp-project-burstdetector" basedir="." default="dist">
+   <property name="name" value="mdp-project-burstdetector" />
    <property name="src" value="src" />
    <property name="version" value="" />
    <property name="dist" value="dist" />
