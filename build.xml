@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="mdp-project-burstdetector" basedir="." default="dist">
-   <property name="name" value="mdp-project-burstdetector" />
+<project name="mdp-project" basedir="." default="dist">
+   <property name="name1" value="mdp-project-keywordfinder" />
+   <property name="name2" value="mdp-project-burstdetector" />
    <property name="src" value="src" />
    <property name="version" value="" />
    <property name="dist" value="dist" />
@@ -18,13 +19,24 @@
    </target>
 	
    <target name="dist" depends="clean,prepare">
+      <javac destdir="bin" srcdir="src" includes="org/mdp/**" source="8" target="8" debug="true" debuglevel="lines,source">
+         <classpath refid="classpath" />
+      </javac>
+      <jar jarfile="${dist}/${name1}.jar" basedir="bin">
+         <manifest>
+            <attribute name="Main-Class" value="org.mdp.spark.cli.Main" />
+         </manifest>
+         <!-- put common dependancies lower -->
+         <!-- <zipfileset src="lib/commons-cli-1.1.jar" /> -->
+      </jar>
+
       <javac destdir="bin" srcdir="src" includes="org/mdp/**" source="1.7" target="1.7" debug="true" debuglevel="lines,source">
          <classpath refid="classpath" />
       </javac>
       <!--
     <copy file="src/com/ontologycentral/ldspider/tld/tld.dat" tofile="bin/com/ontologycentral/ldspider/tld/tld.dat"> </copy>
     -->
-      <jar jarfile="${dist}/${name}.jar" basedir="bin">
+      <jar jarfile="${dist}/${name2}.jar" basedir="bin">
          <manifest>
             <attribute name="Main-Class" value="org.mdp.kafka.cli.Main" />
          </manifest>
