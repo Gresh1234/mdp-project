@@ -16,9 +16,9 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.mdp.kafka.def.KafkaConstants;
 
 public class BurstDetector {
-	public static final int FIFO_SIZE = 50;
-	public static final int EVENT_START_TIME_INTERVAL = 50 * 1000;
-	public static final int EVENT_END_TIME_INTERVAL = 2 * EVENT_START_TIME_INTERVAL;
+	public static int FIFO_SIZE = 10;
+	public static int EVENT_START_TIME_INTERVAL = 6 * 60 * 60 * 1000;
+	public static int EVENT_END_TIME_INTERVAL = 2 * EVENT_START_TIME_INTERVAL;
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException{
 		Properties props = KafkaConstants.PROPS;
@@ -35,6 +35,9 @@ public class BurstDetector {
 		int events = 0;
 		
 		consumer.subscribe(Arrays.asList(args[0]));
+
+		FIFO_SIZE = Integer.parseInt(args[1]);
+		EVENT_START_TIME_INTERVAL = Integer.parseInt(args[2]) * 60 * 60 * 1000;
 		
 		try{
 			while (true) {
@@ -57,15 +60,16 @@ public class BurstDetector {
 							String[] tabs = oldest.value().split("\t");
 							
 							System.out.println("START event-id:"+ events +": start:"+date);
-							System.out.println("video_id: "+tabs[0]);
+							System.out.println("rate: "+FIFO_SIZE+" records in "+gap+" ms");
 							System.out.println("title: "+tabs[1]);
 							System.out.println("channel_title: "+tabs[3]);
-							System.out.println("rate: "+FIFO_SIZE+" records in "+gap+" ms");
+							System.out.println("video_link: https://www.youtube.com/watch?v="+tabs[0]);
 							
 						} else if(gap >= EVENT_END_TIME_INTERVAL && inEvent) {
 							inEvent = false;
 							
-							System.out.println("END event-id:"+ events +" rate: "+FIFO_SIZE+" records in "+gap+" ms");
+							System.out.println("END event-id:"+ events);
+							System.out.println("rate: "+FIFO_SIZE+" records in "+gap+" ms");
 							System.out.println();
 						}
 					}
