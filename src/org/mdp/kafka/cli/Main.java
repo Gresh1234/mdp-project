@@ -22,9 +22,9 @@ public class Main {
 			if (args.length < 1) {
 				StringBuffer sb = new StringBuffer();
 				sb.append("missing <utility> arg where <utility> one of");
-				sb.append("\n\t"+KafkaExample.class.getSimpleName()+": Self-contained example of [producer+consumer]");
-				sb.append("\n\t"+TwitterSimulator.class.getSimpleName()+": Simulate Twitter stream [3 producers]");
-				sb.append("\n\t"+PrintEarthquakeTweets.class.getSimpleName()+": Find and print records with earthquake keywords [consumer]");
+				sb.append("\n\t"+YouTubeSimulator.class.getSimpleName()+": Simulate YouTube stream [3 producers]");
+				sb.append("\n\t"+VideoFilter.class.getSimpleName()+": Consumes a YouTube video stream and filters it according to provided keywords [consumer+producer]");
+				sb.append("\n\t"+BurstDetector.class.getSimpleName()+": Detect sudden bursts in a YouTube video stream [consumer]");
 				
 				usage(sb.toString());
 			}

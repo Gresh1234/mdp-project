@@ -17,11 +17,11 @@ public class YouTubeSimulator {
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException{
 		if(args.length!=3){
-			System.err.println("Usage: [video_file_gzipped] [video_topic] [speed_up (int)]");
+			System.err.println("Usage: [video_file] [video_topic] [speed_up (int)]");
 			return;
 		}
 		
-		BufferedReader videos = new BufferedReader(new InputStreamReader(new GZIPInputStream (new FileInputStream(args[0]))));
+		BufferedReader videos = new BufferedReader(new InputStreamReader(new FileInputStream(args[0])));
 		
 		String videoTopic = args[1];
 		
